@@ -18,7 +18,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y g++ 
 
       - name: install python
-        run: sudo apt-get update && sudo apt-get install -y python
+        run: sudo apt-get update && sudo apt-get install -y python3
 
       - name: build c++ files
         run: |
@@ -26,6 +26,7 @@ jobs:
             out_file="${file%.*}.out"
             g++ "$file" -o "$out_file"
           done
+
       - name: build python files
         run: |
           find python --name ".py" | while read file; do
