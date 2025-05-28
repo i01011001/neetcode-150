@@ -20,7 +20,7 @@ jobs:
       - name: build c++ files
         run: |
           find cpp -name "*.cpp" | while read file; do
-            out_file ="${file%.*}.out"
+            out_file="${file%.*}.out"
             g++ "$file" -o "$out_file"
           done
 
